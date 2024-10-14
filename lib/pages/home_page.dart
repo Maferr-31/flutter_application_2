@@ -1,3 +1,4 @@
+// ignore: unused_import
 import 'dart:nativewrappers/_internal/vm/lib/internal_patch.dart';
 
 import 'package:flutter/material.dart';
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return  DefaultTabController(
-      length: 5,
+      length: myTabs.length,
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -50,10 +51,10 @@ class _HomePageState extends State<HomePage> {
               child: Icon(Icons.person),
             )],
         ),
-        body: const Column(
+        body: Column(
           children: [
             //Texto "i want to eat"
-            Padding(
+           const Padding(
               padding: EdgeInsets.all(24.0),
               child: Row(
                 children: [
