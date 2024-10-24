@@ -8,33 +8,34 @@ class MyTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Tab(
-      child: Column(
-        mainAxisAlignment: 
-        MainAxisAlignment.center, 
-        children:[ 
-          Container(
-        padding: const EdgeInsets.all(08),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 2),
         decoration: BoxDecoration(
           color: Colors.grey[200],
-          borderRadius: BorderRadius.circular(12)
+          borderRadius: BorderRadius.circular(12),
         ),
-        child: Image.asset(
-          iconPath, 
-          color: Colors.grey[600],
-          
-        ),
-        ),
-        const SizedBox(height: 0), 
-        Text(
-          label,
-          style: TextStyle(
-            color: Colors.grey[600],
-            fontSize: 7.3,
-            fontWeight: FontWeight.w500,
+        child: Column(
+          // Usamos Column para apilar el ícono y el texto
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              iconPath,
+              color: Colors.grey[600],
+              width: 24, // Ajusta el tamaño según sea necesario
+              height: 24, // Ajusta el tamaño según sea necesario
             ),
+            const SizedBox(height: 2), // Espacio entre el ícono y el texto
+            Text(
+              label,
+              style: const TextStyle(
+                fontSize: 8.2,
+                color: Colors
+                    .black, // Puedes ajustar el color y el tamaño del texto
+              ),
             ),
-      ],
-      )
-    ) ;
+          ],
+        ),
+      ),
+    );
   }
 }
